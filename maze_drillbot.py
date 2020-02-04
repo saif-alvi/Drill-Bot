@@ -101,7 +101,6 @@ class Map:
             for k in range(len(self.tiles[i])):
                 self.tiles[i][k].adj_tiles = self.find_adj(k, i)
 
-    # TO DO -- COMPLETE THE METHOD BELOW
     def find_adj(self, x: int, y: int) -> list:
         '''
         Return a list of non-wall Tile objects which are adjacent (to the north,
@@ -149,11 +148,7 @@ class Map:
             s += "\n"
         return s
 
-# TO DO -- COMPLETE THE CLASS BELOW
-# Step 1: Read and understand this class. Add in docstrings for the class, and
-#         its methods to demonstrate your understanding. Use proper docstring format.
-# Step 2: Complete the "explore" method as described on the assignment handout.
-#         Your code MUST be recursive.
+
 class DrillBot:
 
     def __init__(self, m):
@@ -173,7 +168,7 @@ class DrillBot:
         time.sleep(0.5)
         
     def explore(self, location):
-        # YOUR DOCSTRING + CODE HERE
+        
      
         '''Location = start
             visit used in base case
@@ -202,37 +197,93 @@ class DrillBot:
                 self.visit(location)        
     
 if __name__ == "__main__":
-    # Some set worlds; feel free to add more maps to test things out
-    map1 = [['(_)','(_)','(s)'],
-            ['(_)','(x)','(r)'],
-            ['(_)','(_)','(_)']]
-
-    map2 = [['(_)','(_)','(s)','(r)','(_)'],
-            ['(_)','(x)','(r)','(x)','(s)'],
-            ['(_)','(_)','(_)','(x)','(r)'],
-            ['(_)','(x)','(_)','(x)','(_)'],
-            ['(d)','(x)','(x)','(x)','(_)'],
-            ['(_)','(d)','(_)','(s)','(r)']]
+    stop_mining = False
+    while stop_mining != True:
+        map1 = [['(_)','(_)','(s)'],
+                ['(_)','(x)','(r)'],
+                ['(_)','(_)','(_)']]
     
-    map3 = [['(_)','(_)','(_)',],
-            ['(_)','(_)','(_)',],
-            ['(_)','(_)','(_)',],
-            ['(_)','(_)','(_)',]]    
+        map2 = [['(_)','(_)','(s)','(r)','(_)'],
+                ['(_)','(x)','(r)','(x)','(s)'],
+                ['(_)','(_)','(_)','(x)','(r)'],
+                ['(_)','(x)','(_)','(x)','(_)'],
+                ['(d)','(x)','(x)','(x)','(_)'],
+                ['(_)','(d)','(_)','(s)','(r)']]
+        
+        map3 = [['(_)','(_)','(_)',],
+                ['(_)','(_)','(_)',],
+                ['(_)','(_)','(_)',],
+                ['(_)','(x)','(_)',]]    
+        
+        map4 = [['(_)','(x)','(_)',],
+                ['(_)','(_)','(_)',]]    
+        
+        
+        # Set the map_data to use, construct a Map object, start drilling, print out results
+        
+        map_one = Map(map1) 
+        print("map1:")
+        print(map_one)
+        print("\n")
+        
+        map_two = Map(map2) 
+        print("map2:")
+        print(map_two)
+        print("\n")
+        
+        map_three = Map(map3) 
+        print("map3:")
+        print(map_three)
+        print("\n")
+        
+        map_four = Map(map4) 
+        print("map4:")
+        print(map_four)
+        print("\n")    
+        
+        
     
-    map4 = [['(_)','(x)','(_)',],
-            ['(_)','(_)','(_)',]]    
     
-    
-    # Set the map_data to use, construct a Map object, start drilling, print out results
-    map_data = map3
-    m = Map(map_data)
-    print('this is the starting point')
-    print(m.start)
-    print('it also has children that are adjacent tiles')
-    print(m.start.adj_tiles)
-    print('now to build a drill bot and have it explore map.start')
-    print("'0' is the drill bot, \n'_' is just dirt, \n'x' is an impassable wall, \n'r' is a ruby, \n's' is a saphhire, \n'e' is an emerald, \n'd' is a diamond")
-    d = DrillBot(m)
-    d.explore(m.start)
-    print('and this is what the drillbot managed to mine')
-    print(d.storage)
+        new_map = input("Which map should the drillbot traverse?:")    
+        map_selected = False
+        while map_selected == False:
+            if(new_map == "map1"):
+                m =  map_one
+                map_selected = True
+            elif(new_map == "map2"):
+                m =  map_two    
+                map_selected = True            
+            elif(new_map == "map3"):
+                m =  map_three    
+                map_selected = True            
+            elif(new_map == "map4"):
+                m =  map_four
+                map_selected = True            
+            else:
+                new_map =input("Please enter a valid map name: ")
+                
+        
+        print("----------------------------------------------------------------------------")
+        print('this is the starting point')
+        print(m.start)
+        print("\n")    
+        print('it also has children that are adjacent tiles')
+        print(m.start.adj_tiles)
+        print("\n")    
+        print('Now to build a drillbot and have it explore the selected map.')
+        print('Legend:')
+        print("'0' is the drill bot, \n'_' is just dirt, \n'x' is an impassable wall, \n'r' is a ruby, \n's' is a saphhire, \n'e' is an emerald, \n'd' is a diamond")
+        print("\n")
+        
+        switch = input("Do you want to turn the drillbot on? (y/n): ")
+        print("----------------------------------------------------------------------------")
+        
+        if(switch == "y"):
+            d = DrillBot(m)
+            d.explore(m.start)
+            print("----------------------------------------------------------------------------")        
+            print('These are the materials the drillbot has mined.')
+            print(d.storage)
+        again = input("Do you want to start again? (y/n):")
+        if (again=="n"):
+            stop_mining = True
