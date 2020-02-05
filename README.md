@@ -9,7 +9,8 @@ Next is printed out the starting point on the map(which is always the first elem
 ![CaptureDrill2](https://user-images.githubusercontent.com/56989215/73809803-61d75f00-47a2-11ea-9be6-3e53e45dcf61.PNG)
 Printing each step the bot takes of the map and the objects collected throught out traversal are printed and the user is prompted if they want to run the bot again.
 ![CaptureDrill3](https://user-images.githubusercontent.com/56989215/73810065-44ef5b80-47a3-11ea-9175-08aa0a2a2c7a.PNG)
-![CaptureDrill4](https://user-images.githubusercontent.com/56989215/73810137-7d8f3500-47a3-11ea-99fc-d98ca26f0b27.PNG)
+![CaptureDrill4 (2)](https://user-images.githubusercontent.com/56989215/73810924-04dda800-47a6-11ea-9b99-a5413ad5cb98.PNG)
+
 
 
 
