@@ -5,14 +5,10 @@ The drill bot can be ran in console.
 
 Initially displayed is a set of 4 premade maps that are available for travesal. The user is prompted for their selecion.
 ![CaptureDrill1](https://user-images.githubusercontent.com/56989215/73799913-40b44580-4785-11ea-85d4-67c93a3a184a.jpeg)
-
-
 Next is printed out the starting point on the map(which is always the first element of the first nested list). Along with adjacent tiles and a legend for each type of object that can exist on the map. The user is prompted to start the drill bot.
-![CaptureDrill2](https://user-images.githubusercontent.com/56989215/73809803-61d75f00-47a2-11ea-9be6-3e53e45dcf61.PNG)  
-Printing each step the bot takes of the map.
+![CaptureDrill2](https://user-images.githubusercontent.com/56989215/73809803-61d75f00-47a2-11ea-9be6-3e53e45dcf61.PNG)
+Printing each step the bot takes of the map and the objects collected throught out traversal are printed and the user is prompted if they want to run the bot again.
 ![CaptureDrill3](https://user-images.githubusercontent.com/56989215/73810065-44ef5b80-47a3-11ea-9175-08aa0a2a2c7a.PNG)
-
-Finally the objects collected thought traversal are printed and the user is prompted if they want to run the bot again.
 ![CaptureDrill4](https://user-images.githubusercontent.com/56989215/73810137-7d8f3500-47a3-11ea-99fc-d98ca26f0b27.PNG)
 
 
